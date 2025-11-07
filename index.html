@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sekolah - Single Page</title>
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #e6f0ff; /* Biru soft */
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #4da6ff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #3399ff;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Konten */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        section {
+            display: none; /* Semua section awalnya tersembunyi */
+        }
+
+        section.active {
+            display: block; /* Section aktif ditampilkan */
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        section h2 {
+            color: #004080;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4da6ff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Selamat Datang di Sekolah SMK-AL-IHYA SELAJAMBE</h1>
+</header>
+
+<nav>
+    <a onclick="showPage('home')">Beranda</a>
+    <a onclick="showPage('about')">Profil Sekolah</a>
+    <a onclick="showPage('contact')">Kegiatan</a>
+</nav>
+
+<div class="container">
+    <!-- Home -->
+    <section id="home" class="active">
+        <h2>Beranda</h2>
+        <p>Selamat datang di website resmi Sekolah SMK AL-IHYA SELAJAMBE.Website ini memuat informasi profil sekolah, mengenai bermacam macam jurusan dan kegiatan siswa.</p>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIaQ4p4Zl5uyvGqJM0W4rqNaCw4c_OoEzBcFjrQYb5H-Ch1sklkNMcRsBGhLxk7xpVgmkkilPi9ccLUfDWjFpsUE7T-oNv6NpCRIEsOEqAHuwUb1l2psdHavNQAad0g9XP0dJoBWZAt3A/s1600/PhotoGrid_1521172128890.jpg"  alt="Gambar Sekolah">
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>Profil Sekolah</h2>
+        <p>Tentang SMK AL-IHYA SELAJAMBE.</p>
+		 <ul>
+            <li>Visi dan Misi</li>
+            <li>Visi: Menjadi sekolah unggulan rujukan nasional</li>
+            <li>Misi: Menumbuhkan budaya belajar, disiplin, dan karakter melalui pendidikan berkualitas</li>
+        </ul>
+        <img src="images/kegiatan.jpg" alt="Kegiatan Sekolah">
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Kegiatan</h2>
+        <p>Informasi Kegiatan Contoh nya yaitu:</p>
+        <ul>
+            <li>Kegiatan Kunjungan Industri</li>
+        </ul>
+		<img src="https://www.utdi.ac.id/___files/SMK%20AL%20IHYA.jpg?_gl=1*107zk3l*_ga*MTYyNjQ3ODA3NS4xNzYyNDg2ODUy*_ga_2EVPG4HVHP*czE3NjI0ODY4NTIkbzEkZzEkdDE3NjI0ODY4NjYkajQ2JGwwJGg5NTM1MTYxMzI."  alt="Gambar Sekolah">
+    </section>
+        
+
+    
+
+<footer>
+    &copy; 2025 Sekolah SMK AL-IHYA SELAJAMBE.
+</footer>
+
+<script>
+    function showPage(pageId) {
+        // Sembunyikan semua section
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Tampilkan section yang dipilih
+        const activeSection = document.getElementById(pageId);
+        activeSection.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
